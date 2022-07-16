@@ -1,0 +1,249 @@
+.outer{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;    
+    scroll-behavior:initial;
+
+} 
+
+.header{
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: bold; 
+    color:rgb(22, 22, 94); 
+    justify-content: center; 
+    align-items: center; 
+    /* border:1px solid rgb(255, 174, 0);  */
+    text-align: center; 
+    margin: 2%;
+}
+
+.form-outer{
+    display:flex; 
+    flex-direction: row; 
+    justify-content: space-between;  
+    border:2px solid black;
+    margin:2%;
+
+}
+
+
+
+.is-invalid {
+    border: 2px solid red;
+}
+
+.d-none {
+    display: none;
+}
+
+.txt-danger {
+    color: red;
+}
+
+.is-valid {
+    margin: 2px solid #04ec7a;
+}
+
+
+
+
+.previewer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    align-items: flex-start; 
+    width:30%; 
+    border-right:1px solid rgb(43, 8, 8);
+   
+   
+}
+
+.previewer img {
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    margin-bottom: 20px; 
+    margin-left:20px; 
+    
+  
+  
+} 
+.previewer .form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin:2%; 
+    padding: 2%;
+}
+
+.previewer .form-group input,
+small {
+    margin: 1%;
+}
+
+.previewer img:hover {
+    box-shadow: 0 1px 2px rgba(228, 19, 118, 0.9), 0 2px 4px rgba(255, 21, 185, 0.9), 0 4px 8px rgba(247, 7, 195, 0.9), 0 8px 16px rgba(13, 241, 226, 0.9), 0 16px 32px rgba(243, 77, 195, 0.9), 0 32px 64px rgba(225, 43, 216, 0.81);
+    transform: translateY(-7px);
+}
+
+.right{ 
+    width:70%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+}
+
+.right .form-group input, 
+.right .form-group label, 
+.right .form-group small{
+   margin:2%; 
+   padding:2%; 
+   width:95%;
+    
+}
+
+.card-btn{
+    width: 170px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    background-color:#05083f; 
+    color: white; 
+
+    /* background-color: white; */
+    /* color: #05083f; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 60px 40px -7px;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    left:35%;  
+    top:25%;
+    margin-bottom: 30px;
+}
+
+.card-btn:hover{
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff; 
+    cursor: pointer;
+    transform: translateY(-7px);
+}
+
+.card-btn:disabled{
+    background-color: #05083f; 
+    color:white; 
+    cursor: pointer; 
+}
+
+
+
+
+label{ 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: bold;
+    color:#05083f;
+
+}
+
+.header h2{
+    color:#ec4d04;
+}
+
+
+
+td:hover{
+    cursor: pointer;
+    background-color: #05083f;
+    color: white;
+    border:2px solid white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 60px 40px -7px;
+}
+
+.my-pagination{
+  position: sticky; 
+  color:#05083f;
+  font-weight: bold; 
+  margin:3%; 
+  text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: blue;
+    color: white;
+}
+
+.ngx-pagination{
+    order:1;
+}
+
+.headicon{
+    margin:1%; 
+    padding: 1%;
+}
+
+.matimg{
+    width:150px; 
+    height:150px; 
+}
+
+.sorter{
+    display:flex; 
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: center; 
+    margin-top:10px; 
+} 
+
+th:hover{
+   cursor:pointer; 
+   background-color: #05083f;
+   color: white;
+}
+
+
+
+
+.filter{
+    display: grid; 
+    grid-template-columns: 1fr 1fr ;
+    grid-column-gap: 10px; 
+    grid-row-gap: 10px; 
+    margin-bottom: 2%; 
+   
+}
+
+
+
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1) ;
+    
+}
+
+.search input {
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid blue; 
+    background-color: #05083f; 
+    color:white;
+    color:rgb(241, 243, 132);
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid white;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px; 
+    color:white;
+}
+

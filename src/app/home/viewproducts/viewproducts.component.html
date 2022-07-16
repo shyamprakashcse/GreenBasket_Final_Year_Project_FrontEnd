@@ -1,0 +1,92 @@
+<div class="outer">
+    <div class="sidebar">
+        <h3>Side bar</h3>
+        <nav>
+
+            <ul>
+
+                <h4>Agriculture And Farmings</h4>
+                <!-- <img src="/assets/images/AgroFarm.jpg" alt="" class="box-shadow"> -->
+
+
+                <li (click)="AgriToolData()">
+                    <a>Farming Tools,Equipments and Machines </a>
+                </li>
+                <li (click)="TractorData()">
+                    <a>Tractor And  Parts</a>
+                </li>
+                <li (click)="IrrigationData()">
+                    <a>Irrigation And Harvesting Machines</a>
+                </li>
+                <li (click)="FreshFlowerData()">
+                    <a>Fresh Flowers,Plants,Saplings</a>
+                </li>
+                <li (click)="AnimalFeedData()">
+                    <a>Poultry Farming,dairy Farming,Animal Feed</a>
+                </li>
+                <li (click)="CoirProductsData()">
+                    <a>Coir And Agro Products</a>
+                </li>
+                <li (click)="FertilizersData()">
+                    <a>Fertilizers,Soil Addictives</a>
+                </li>
+                <li (click)="PetsData()">
+                    <a>Farming And Pets</a>
+
+                </li>
+
+
+
+
+                <h4>Food And Beverages</h4>
+                <li (click)="CerealsData()">
+                    <a>Cereals And Foods</a>
+                </li>
+                <li (click)="PoultryData()">
+                    <a>Meat And Poultry Foods</a>
+                </li>
+                <li (click)="FreshVegData()">
+                    <a>Fresh,Dried And Preserved Vegetables</a>
+                </li>
+                <li (click)="MilkDairyData()">
+                    <a>Milk And Dairy Products</a>
+                </li>
+                <li (click)="CookingMasalaData()">
+                    <a>Cooking Spicies And Masalas</a>
+                </li>
+                <li (click)="EdibleOilData()">
+                    <a>Edible Oils And Wastes</a>
+                </li>
+
+            </ul>
+
+
+
+
+
+
+
+
+        </nav>
+    </div>
+    <div class="productbar agrobg ">
+        <div *ngFor="let item of productBar | paginate:{itemsPerPage:2,currentPage:page,totalItems:totalLength}; let i=index" class="carder">
+
+            <img src={{item.downloadlink}} alt="logo">
+
+            <h6>Product Name: {{item.ProductNameLocal}}</h6>
+
+
+
+
+            <p>Product list:{{item.ProductName}}</p>
+            <p>ShopName:{{item.ShopName}}</p>
+            <p>ShopAddress:{{item.ShopAddress}}</p>
+            <p>City:{{item.City}}</p>
+            <p>State:{{item.State}}</p>
+            <p>Contact:{{item.Contact}}</p>
+
+        </div>
+    </div>
+    <pagination-controls (pageChange)="page=$event" class="my-pagination"></pagination-controls>
+</div>

@@ -1,0 +1,112 @@
+<div class="outer"> 
+    <div class="prop">
+        <h3 class="progress-bar progress-bar-animated prgbar" [ngStyle]="{'width':uploadProgress+'%'}">{{uploadProgress}}</h3>
+        <h2>heu</h2>
+    </div>
+<form class="form-outer" #companyRegForm="ngForm" *ngIf="DisplayForm">
+    <h2>Company Registration Form</h2>  
+    <label for="formFile" class="form-label">Click Image or Choose File Option</label>
+
+   
+    <div class="previewer"> 
+       
+
+        <img [src]="previewImgSrc" alt="" class="box-shadow" (click)="logo.click()">
+        <div class="form-group">
+
+            <input class="form-control" type="file" required id="formFile" (change)="showPreview($event,companyRegForm)" #logo>
+            <small class="txt-danger" [ngClass]="{'d-none':logo.untouched||logo.valid || acceptFile}">File should be less than 2MB</small>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Company Name</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization name" name="companyName" required ngModel #companyName="ngModel" [ngClass]="{'is-invalid': companyName.invalid && companyName.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':companyName.valid || companyName.untouched}">* Company Name field is required</small>
+
+    </div>  
+
+    
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Organization Type</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization type" name="organizationType" required ngModel #organizationType="ngModel" [ngClass]="{'is-invalid': organizationType.invalid && organizationType.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':organizationType.valid || organizationType.untouched}">Organization Type field is required.</small><br>
+        <small class="txt-danger" [ngClass]="{'d-none':organizationType.valid || organizationType.untouched}">Examples: (public,private,patnerships,etc)</small>
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Company Website</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization URL" name="companyURL" required ngModel #companyURL="ngModel" [ngClass]="{'is-invalid': companyURL.invalid && companyURL.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':companyURL.valid || companyURL.untouched}">* Company website link  is required</small><br> 
+        <small class="txt-danger" [ngClass]="{'d-none':companyURL.valid || companyURL.untouched}">* example : www.abc.com . if not type none</small>
+        
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Organization Location</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization Location" name="location" required ngModel #companylocation="ngModel" [ngClass]="{'is-invalid': companylocation.invalid && companylocation.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':companylocation.valid || companylocation.untouched}">* Location is required</small>
+       
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Industry/Production Type</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Industry Type" name="industryType" required ngModel #industryType="ngModel" [ngClass]="{'is-invalid': industryType.invalid && industryType.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':industryType.valid || industryType.untouched}">* Indutry Type is required</small><br>  
+        <small class="txt-danger" [ngClass]="{'d-none':industryType.valid || industryType.untouched}">* Example :(Agricultural Industry,packaging Industry,Food and Beverages Industry,chemical industry etc)</small>
+        
+       
+
+    </div> 
+
+     
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Company Registration Code/Number</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization register Number" name="registerNumber" required ngModel #registerNumber="ngModel" [ngClass]="{'is-invalid': registerNumber.invalid && registerNumber.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':registerNumber.valid || registerNumber.untouched}">* Registration no is required. Govt registration number</small>
+       
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Years of Incorporation</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization founded year" name="years" required ngModel #years="ngModel" [ngClass]="{'is-invalid': years.invalid && years.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':years.valid || years.untouched}">* organization founded years is required.</small>
+       
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">company Address</label>
+        <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization Address" name="address" required ngModel #address="ngModel" [ngClass]="{'is-invalid': address.invalid && address.touched}">
+        <small class="txt-danger" [ngClass]="{'d-none':address.valid || address.untouched}">* organization Address> is required.</small>
+       
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Company Email address</label>
+        <input type="email" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your organization email" name="email" required ngModel #email="ngModel" [ngClass]="{'is-invalid': email.invalid && email.touched}" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <small class="txt-danger" [ngClass]="{'d-none':email.valid || email.untouched}">Email field is required and must be in  valid format</small>
+
+    </div> 
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">contact Number </label>
+        <input type="email" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your contact number with country code" name="contact" required ngModel #contact="ngModel" [ngClass]="{'is-invalid': contact.invalid && contact.touched}" >
+        <small class="txt-danger" [ngClass]="{'d-none':contact.valid || contact.untouched}">contact field is required</small>
+
+    </div>
+
+
+    
+
+    <button type="submit" class="btn btn-primary" [disabled]="!companyRegForm.valid" (click)="companyRegistration(companyRegForm)">Register</button>
+</form> 
+</div>

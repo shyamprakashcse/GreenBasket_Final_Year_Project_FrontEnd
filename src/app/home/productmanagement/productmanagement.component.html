@@ -1,0 +1,236 @@
+<div class="outer">
+    <div class="prop" *ngIf="!displayForm">
+        <h3 class="progress-bar progress-bar-animated prgbar" [ngStyle]="{'width':uploadProgress+'%'}">{{uploadProgress}}</h3>
+        <h2>heu</h2>
+    </div>
+    <div class="header" *ngIf="displayForm">
+        <h2>Product Registration Form</h2>
+        <label for="formFile" class="form-label">Click Image or Choose File Option</label>
+    </div>
+
+    <form class="form-outer" #prodRegForm="ngForm" *ngIf="displayForm">
+
+
+
+        <div class="previewer">
+
+
+            <img [src]="previewImgSrc" alt="" class="box-shadow" (click)="logo.click()">
+            <div class="form-group">
+
+                <input class="form-control" type="file" required id="formFile" (change)="showPreview($event,prodRegForm)" #logo>
+                <small class="txt-danger" [ngClass]="{'d-none':logo.untouched||logo.valid || acceptFile}">File should be less than 2MB</small>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Name</label>
+                <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your product name" name="MaterialName" required [(ngModel)]="productobj.MaterialName" #companyName="ngModel" [ngClass]="{'is-invalid': companyName.invalid && companyName.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':companyName.valid || companyName.untouched}">* Product Name field is required</small>
+
+
+            </div>
+            <div class="form-group" *ngIf="!displayUpdateButton">
+                <label for="inputState">Choose Your Company</label>
+                <select class="form-select" aria-label="Default Choose Your Company" name="companyID" ngModel="company" #company required>
+                    <option disabled selected value> -- select your company -- </option>
+                    <option value={{item.CompanyID}} *ngFor="let item of industryID">{{item.CompanyName}}</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Cost</label>
+                <input type="number" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Selling Cost per unit" name="MaterialCost" required [(ngModel)]="productobj.MaterialCost" #companylocation="ngModel" [ngClass]="{'is-invalid': companylocation.invalid && companylocation.touched}"
+                    pattern="\d{0,9}">
+                <small class="txt-danger" [ngClass]="{'d-none':companylocation.valid || companylocation.untouched}">* Product Cost is required and Enter Only digits</small>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Available Quantity</label>
+                <input type="number" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your product Available Quantity" name="MaterialQuantity" required [(ngModel)]="productobj.MaterialQuantity" #years="ngModel" [ngClass]="{'is-invalid': years.invalid && years.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':years.valid || years.untouched}">* Material Quantity is required.</small>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Warehouse Name</label>
+                <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Warehouse name" name="WarehouseName" required [(ngModel)]="productobj.WarehouseName" #WarehouseName="ngModel" [ngClass]="{'is-invalid': WarehouseName.invalid && WarehouseName.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':WarehouseName.valid || WarehouseName.untouched}">* Warehouse Name field is required</small>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Warehouse Location</label>
+                <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Warehouse Location" name="WarehouseLocation" required [(ngModel)]="productobj.WarehouseLocation" #WarehouseLoc="ngModel" [ngClass]="{'is-invalid': WarehouseLoc.invalid && WarehouseLoc.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':WarehouseLoc.valid || WarehouseLoc.untouched}">* Warehouse Location field is required</small>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Supplier Name</label>
+                <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your supplier name" name="SupplierName" required [(ngModel)]="productobj.SupplierName" #SupplierName="ngModel" [ngClass]="{'is-invalid': SupplierName.invalid && SupplierName.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':SupplierName.valid || SupplierName.untouched}">* Supplier Name field is required</small>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Supplier Location</label>
+                <input type="text" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your supplier Location" name="SupplierLocation" required [(ngModel)]="productobj.SupplierLocation" #SupplierLoc="ngModel" [ngClass]="{'is-invalid': SupplierLoc.invalid && SupplierLoc.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':SupplierLoc.valid || SupplierLoc.untouched}">* Supplier Location field is required</small>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Supplier Cost</label>
+                <input type="number" class="form-control is-valid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your supplier Cost per unit" name="SupplierCost" required [(ngModel)]="productobj.SupplierCost" #SupplierCost="ngModel" [ngClass]="{'is-invalid': SupplierCost.invalid && SupplierCost.touched}"
+                    pattern="\d{0,9}">
+                <small class="txt-danger" [ngClass]="{'d-none':SupplierCost.valid || SupplierCost.untouched}">* Supplier cost field is required and enter only digits</small>
+
+
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary card-btn" [disabled]="prodRegForm.invalid || !acceptFile " (click)="productRegisteration(prodRegForm)" *ngIf="!displayUpdateButton">Submit</button>
+
+            <button type="submit" class="btn btn-primary card-btn" [disabled]="prodRegForm.invalid || !acceptFile" (click)="updateData(prodRegForm)" *ngIf="displayUpdateButton">Update</button>
+            <button type="reset" class="btn btn-primary card-btn" [disabled]="prodRegForm.invalid || !acceptFile" (click)="cancel()" *ngIf="displayUpdateButton">Cancel</button>
+
+
+
+        </div>
+
+
+    </form>
+
+    <pagination-controls (pageChange)="page=$event" class="my-pagination" *ngIf="!displayUpdateButton"></pagination-controls>
+
+    <div class="filter">
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search By MaterialName" [(ngModel)]="searchInput.MaterialName"> </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search By MaterialCost" [(ngModel)]="searchInput.MaterialCost"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search By Material Quantity" [(ngModel)]="searchInput.MaterialQuantity"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search By Supplier Name" [(ngModel)]="searchInput.SupplierName"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search by Supplier Cost" [(ngModel)]="searchInput.SupplierCost"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search by Supplier Location" [(ngModel)]="searchInput.SupplierLocation"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search"> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search by Warehouse Name" [(ngModel)]="searchInput.WarehouseName"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="search "> <i class="fa fa-search"></i> <input type="text" class="form-control" placeholder="Search by Warehouse Location" [(ngModel)]="searchInput.WarehouseLocation"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="tab" *ngIf="temparr.length && displayForm">
+        <table class="table table-warning  table-bordered table-striped table-hover table-responsive-md">
+            <thead>
+                <tr>
+                    <th scope="col">Company </th>
+                    <th scope="col">Material Image</th>
+                    <th scope="col" (click)="sortHeader('MaterialName')">Material Name <i class="fa fa-sort" (click)="sortHeader('MaterialName')"></i></th>
+                    <th scope="col" (click)="sortHeader('MaterialCost')">Material Cost <i class="fa fa-sort" (click)="sortHeader('MaterialCost')"></i> </th>
+                    <th scope="col" (click)="sortHeader('MaterialQuantity')">Material Quantity <i class="fa fa-sort" (click)="sortHeader('MaterialQuantity')"></i> </th>
+                    <th scope="col" (click)="sortHeader('WarehouseName')">Warehouse Name <i class="fa fa-sort" (click)="sortHeader('WarehouseName')"></i> </th>
+                    <th scope="col" (click)="sortHeader('WarehouseLocation')">Warehouse Location <i class="fa fa-sort" (click)="sortHeader('WarehouseLocation')"></i></th>
+                    <th scope="col" (click)="sortHeader('SupplierName')">Supplier Name <i class="fa fa-sort" (click)="sortHeader('SupplierName')"></i></th>
+                    <th scope="col" (click)="sortHeader('SupplierLocation')">Supplier Location <i class="fa fa-sort" (click)="sortHeader('SupplierLocation')"></i></th>
+                    <th scope="col" (click)="sortHeader('SupplierCost')">Supplier Cost <i class="fa fa-sort" (click)="sortHeader('SupplierCost')"></i></th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active" *ngFor="let item of temparr| orderBy: orderField : reverseSort
+                                                                  | filterBy :searchInput
+                                                                  | paginate:{itemsPerPage:5,currentPage:page,totalItems:temparr.length} ;
+                                                                   let i=index" (click)="up()">
+
+                    <td>{{mapper[i]}}</td>
+                    <td><img src={{item.downloadingPath}} alt="prodimg" class="matimg"></td>
+                    <td>{{item.MaterialName}}</td>
+                    <td>{{item.MaterialCost}}</td>
+                    <td>{{item.MaterialQuantity}}</td>
+                    <td>{{item.WarehouseName}}</td>
+                    <td>{{item.WarehouseLocation}}</td>
+                    <td>{{item.SupplierName}}</td>
+                    <td>{{item.SupplierLocation}}</td>
+                    <td>{{item.SupplierCost}}</td>
+                    <td (click)="update(item)"><i class="fa fa-pencil "></i></td>
+                    <td (click)="delete(item)"><i class="fa fa-trash " (click)="delete(item)"></i></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 *ngIf="(temparr | filterBy: searchInput).length === 0">No matching elements</h3>
+
+
+
+
+</div>

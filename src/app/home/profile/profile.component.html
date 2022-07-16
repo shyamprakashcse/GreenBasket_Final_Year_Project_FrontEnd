@@ -1,0 +1,31 @@
+<div class="outer"> 
+    <button class="mybtn" (click)="getSchemas()">My Products</button> 
+
+    <div class="product-container"> 
+
+        <div class="product-card box-shadow" *ngFor="let item of UserProducts;let i=index" > 
+              
+            <img src={{item.downloadlink}} alt="imgLogo" class="imgCls"> 
+            <h4>{{item.ProductNameLocal}}</h4> 
+            <h4>{{item.Cost}}</h4>
+          
+            <h4>{{item.ShopName}}</h4> 
+            <h4>{{item.ShopAddress}}</h4>   
+            <h4>{{item.State}}</h4> 
+            <h4>{{item.City}}</h4>
+            <h6>{{item.Contact}}</h6>  
+
+            <button class="mybtn" (click)="prodDelete(i)">Delete</button> 
+
+
+
+
+
+        
+     
+        </div> 
+
+    </div>
+    
+  
+</div>

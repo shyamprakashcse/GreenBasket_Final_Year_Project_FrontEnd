@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.quora-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 0.1em solid rgb(171, 145, 236);
+    border-top: 0.1em solid rgb(171, 145, 236);
+    ;
+    padding: 2%;
+}
+
+.quora-bar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid wheat;
+}
+
+.quora-bar .search-outer {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+}
+
+.quora-bar .search-outer input {
+    width: 90%;
+}
+
+.quora-bar .search-outer button {
+    height: inherit;
+    height: 50px;
+}
+
+.quora-bar i {
+    cursor: pointer;
+    color: blue;
+}
+
+.quora-bar input {
+    width: 40%;
+    border: 2px solid rgb(12, 29, 216);
+    outline-color: blue;
+}
+
+.quora-bar button {
+    width: 20%;
+}
+
+.eachquestionsection {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+
+.eachquestionsection button {
+    margin: 2%;
+    width: 80px;
+    height: 30px;
+}
+
+.eachquestionsection i {
+    cursor: pointer;
+    color: blue;
+}
+
+.questionsection {
+    margin-bottom: 2%;
+    border-bottom: 1px solid rgb(60, 62, 35);
+}
+
+.eachquestionsection .details {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    margin-bottom: 1%;
+}
+
+.details p {
+    margin-left: 1%;
+    background-color: rgb(255, 255, 131);
+    padding: 1%;
+}
+
+.eachquestionsection .questionheader {
+    text-align: center;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+}
+
+.eachquestionsection .question {
+    margin-left: 1%;
+    text-align: center;
+    /* white-space: pre-wrap;
+
+    word-wrap: break-word;
+
+    white-space: -webkit-pre-wrap;
+
+    word-break: break-all;
+    white-space: normal;*/
+    font-size: large;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.answersection {
+    margin-top: 2%;
+}
+
+.eachquestionsection .answersection .eachanswersection {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.eachanswersection p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    margin-bottom: 1%;
+}
+
+.eachanswersection .date {
+    background-color: rgb(255, 255, 132);
+    text-align: center;
+    width: fit-content;
+    margin-left: 25%;
+}
+
+hr {
+    color: #9a2fff;
+    border: 1px solid #9a2fff;
+    size: 1px;
+}
+
+.useranswer {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    /* overflow-wrap: break-word;
+    white-space: -moz-pre-wrap !important;
+
+    white-space: -pre-wrap;
+
+    white-space: -o-pre-wrap;
+
+    white-space: pre-wrap;
+
+    word-wrap: break-word;
+
+    white-space: -webkit-pre-wrap;
+
+    word-break: break-all;
+    white-space: normal;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    margin-left: 2%;
+}
+
+.qboxouter,
+.ansboxouter {
+    background-image: url("/assets/images/groupquora.jpg");
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    scroll-behavior: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.ansboxouter {
+    background-image: url("/assets/images/smartfarming.jpg");
+}
+
+.qboxouter .qbox,
+.ansboxouter .ansbox {
+    width: 50%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 25%;
+    scroll-behavior: auto;
+}
+
+.qbox textarea {
+    border: 2px solid blue;
+}
+
+.qbox button {
+    margin: 2%;
+    width: 50%;
+}
+
+.ansbox textarea {
+    border: 2px solid #9a2fff;
+}
+
+.ansbox button {
+    margin: 2%;
+}
+
+.btn-section {
+    margin-top: 1%;
+    background-color: antiquewhite;
+}
+
+.count-section {
+    margin-top: 1%;
+}
+
+.btn-success {
+    background-color: #2fff59;
+    color: black;
+}
+
+.my-pagination {
+    position: sticky;
+    color: #05083f;
+    font-weight: bold;
+    margin: 3%;
+    text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: blue;
+    color: white;
+}
+
+.ngx-pagination {
+    order: 1;
+}

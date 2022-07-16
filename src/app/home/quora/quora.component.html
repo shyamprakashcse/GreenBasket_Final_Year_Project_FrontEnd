@@ -1,0 +1,102 @@
+<div class="quora-bar">
+    <img src="/assets/images/quoralogo.jpg" alt="qlogo">
+    <!-- <input type="search" name="query" id="search-box" placeholder="search your question here" class="form-control" ngModel #searchbar="ngModel" (click)="show($event)"> -->
+    <div class="search-outer">
+        <!-- <input id="search-input" type="search" placeholder="search your questions here" [(ngModel)]="userquery" class="form-control" /> -->
+        <input id="search-input" type="search" placeholder="search your questions here" [(ngModel)]="searchInput.question" class="form-control" />
+
+        <button type="submit" class="btn btn-primary" (click)="show()">search</button>
+
+    </div>
+
+
+
+
+
+
+    <button type="button" class="btn btn-primary" (click)="showAskQuestionPopUp()">Ask Questions</button>
+
+
+</div>
+
+<pagination-controls (pageChange)="page=$event" class="my-pagination"></pagination-controls>
+
+<div class="questionsection" *ngFor="let item of questionslist  | filterBy :searchInput
+                                                                | paginate:{itemsPerPage:5,currentPage:page,totalItems:questionslist.length};
+                                                                let ind=index">
+    <div class="eachquestionsection">
+        <div class="questionheader card-header">
+            <i class="fa fa-caret-up fa-3x"></i>
+            <h3 class="question ">
+                {{item.question}}</h3>
+
+        </div>
+
+
+
+        <div class="details card-footer">
+            <i class="fa fa-caret-down fa-3x" aria-hidden="true"></i>
+            <p> {{item.useremail}}</p>
+            <p>{{item.date}}</p>
+
+        </div>
+
+
+
+        <div class="answersection" *ngIf="showanswer">
+
+            <div class="eachanswersection card-header" *ngFor="let ans of item.answers; let i=index">
+                <i class="fa fa-caret-up fa-3x"></i>
+                <p class="date ">Answered on {{ans.date}} by {{ans.useremail}}</p>
+
+                <p class="useranswer card-header">{{ans.answer}}</p>
+                <i class="fa fa-caret-down fa-3x"></i>
+            </div>
+
+        </div>
+
+        <div class="btn-section">
+            <button type="submit" class="btn btn-primary" (click)="Reply(ind)">Reply</button>
+            <button type="submit" class="btn btn-dark" (click)="answersButton()">Answers</button>
+            <button type="submit" class="btn btn-danger" (click)="closeAnswerButton()" *ngIf="showanswer">Close</button>
+        </div>
+
+        <div class="count-section">
+            <h6>Answers <i class="fa fa-archive" aria-hidden="true" [ngStyle]="{'color': 'lightsalmon'}" (click)="answersButton()"></i> {{item.answers.length}} </h6>
+            <h6>Likes <i class="fa fa-thumbs-o-up" [ngStyle]="{'color': LikesColor}" (click)="ToggleLikes(ind)"></i> {{item.likes}}</h6>
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="qboxouter" *ngIf="showquestionbox">
+    <div class="qbox" ngForm #qform="ngForm">
+
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="question" ngModel #userquest="ngModel" placeholder="write your questions here"></textarea>
+        <button type="submit" class="btn btn-primary" (click)="AddQuestion(qform)">Add Question</button>
+        <button type="submit" class="btn btn-danger" (click)="closeQuestionBox()">Close</button>
+
+
+    </div>
+</div>
+
+<div class="ansboxouter" *ngIf="showanswerstatus">
+    <div class="ansbox ">
+
+        <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 " name="answer " [(ngModel)]="userans" placeholder="write your Answer here "></textarea>
+        <button type="submit " class="btn btn-success " (click)="AddAnswer() ">Add Answer</button>
+        <button type="submit " class="btn btn-danger " (click)="closeAnswerBox() ">Close</button>
+
+
+    </div>
+</div>

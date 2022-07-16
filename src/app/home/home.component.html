@@ -1,0 +1,52 @@
+<!-- <p>Home Works</p> -->
+<nav class="navbar navbar-expand-sm navbar-dark " style="background-color:#101b39;">
+
+    <ul class="navbar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link" href="" [routerLink]="['/home/explore']" routerLinkActive="active">Explore Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="" [routerLink]="['/home/sell']" routerLinkActive="active">Sell on Store</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="" [routerLink]="['/home/view']" routerLinkActive="active">Available Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="" [routerLink]="['/home/ask']" routerLinkActive="active">Ask your doubts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="" [routerLink]="['/home/vendors']" routerLinkActive="active">Vendor Manage</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="" [routerLink]="['/home/indcrt']" routerLinkActive="active">Start your business</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="" [routerLink]="['/home/prodcrud']" routerLinkActive="active">Maintain stock</a>
+        </li>
+        <li class="nav-item">
+            <span>
+            <i class="fa fa-user" aria-hidden="true" [ngStyle]="{'color': 'white'}"></i>
+            <a class="nav-link " href="" [routerLink]="['/login']" routerLinkActive="active">Logout</a>
+          </span>
+
+        </li>
+
+        <!--
+      <li class="nav-item">
+          <a class="nav-link" href="" [routerLink]="['/home']" routerLinkActive="active" *ngIf="isLoggedIn()">Home</a>
+
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="" [routerLink]="['/logout']" routerLinkActive="active" (click)="logout()" *ngIf="isLoggedIn()">Logout</a>
+
+      </li>
+            -->
+    </ul>
+
+
+
+</nav>
+
+<router-outlet></router-outlet>

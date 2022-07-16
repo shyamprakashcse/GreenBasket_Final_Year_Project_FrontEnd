@@ -1,0 +1,28 @@
+.nav-item a {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: 100;
+}
+
+.nav-item a:hover {
+    color: navy;
+    background-color: white;
+}
+
+.active {
+    /* background-color: #04ec7a;
+     background-color: #7027e0;
+    background-color: #ffe500;
+*/
+    background-color: #66edb2;
+    color: navy;
+}
+
+.navbar-nav li {
+    margin-right: 200px;
+}
+
+body {
+    background-color: #101b39;
+}

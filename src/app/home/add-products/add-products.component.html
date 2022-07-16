@@ -1,0 +1,168 @@
+<div class="loader" *ngIf="showSpinner()">
+    <h2>your product is uploading please wait ...</h2>
+</div>
+<div class="outer" *ngIf="!showSpinner()">
+    <form class="seller-form" #sellerform="ngForm">
+
+        <label for="formFile" class="form-label">Click Image or Choose File Option</label>
+        <div class="previewer">
+
+            <img [src]="previewImgSrc" alt="" class="box-shadow" (click)=" productImage.click()">
+            <div class="form-group">
+
+                <input class="form-control" type="file" required id="formFile" (change)="showPreview($event,sellerform)" #productImage>
+                <small class="txt-danger" [ngClass]="{'d-none':productImage.untouched||productImage.valid || acceptFile}">File should be less than 2MB</small>
+            </div>
+        </div>
+
+        <div class="product-form">
+
+
+            <div class="form-group">
+                <label for="inputAddress2">Product Name</label>
+                <input type="text" class="form-control is-valid" id="inputAddress0" placeholder="Enter Your Product Name" name="productname" required ngModel #productname="ngModel" [ngClass]="{'is-invalid':productname.invalid && productname.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':productname.untouched||productname.valid}">*Field is Required</small>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress2">Cost</label>
+                <input type="text" class="form-control is-valid" id="inputAddress0" placeholder="Enter Your Product Cost" name="cost" required ngModel #cost="ngModel" [ngClass]="{'is-invalid':cost.invalid && cost.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':cost.untouched||cost.valid}">*Field is Required</small>
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputAddress2">Shop Name</label>
+                <input type="text" class="form-control is-valid" id="inputAddress1" placeholder="Enter Your Shop Name" name="shopname" required ngModel #shopname="ngModel" [ngClass]="{'is-invalid':shopname.invalid && shopname.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':shopname.untouched||shopname.valid}">*Field is Required</small>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputAddress2">Shop Address</label>
+                <input type="text" class="form-control is-valid" id="inputAddress2" placeholder="Enter Your Shop Address ,Apartment, studio, or floor" name="shopaddress" required ngModel #address="ngModel" [ngClass]="{'is-invalid':address.invalid && address.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':address.untouched||address.valid}">*Field is Required</small>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputAddress2">Product Catagory</label>
+                <select name="productTitleIndex" id="" class="form-select" aria-label="Default choose your product catagory" ngModel="prodcat" #prodcat required (ngModelChange)="updateSelectedProductIndex(prodcat.value)">
+                  <option disabled selected value>---choose one ---</option>
+                  <option value="{{i}}" *ngFor="let item of productCatagories; let i=index">{{item.title}}</option>
+                </select>
+
+                <small class="txt-danger" [ngClass]="{'d-none':prodcat.value||prodcat.valid||prodcat.untouched}">*field is required </small>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress2">Product Types</label>
+                <select name="productTypeIndex" id="" class="form-select" aria-label="Default choose your product type" ngModel="prodtyp" #prodtyp required (ngModelChange)="updateSelectedProductTypeIndex(prodtyp.value)">
+                  <option disabled selected value>---choose one ---</option>
+                  <option value="{{i}}" *ngFor="let item of productTypes; let i=index">{{item}}</option>
+                </select>
+
+
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="">Products</label>
+                <select name="product" id="" class="form-select" aria-label="Default choose your product" ngModel="prod" #prod required>
+                  <option disabled selected value>---choose one ---</option>
+                  <option value="{{i}}" *ngFor="let item of productMenu; let i=index">{{item}}</option>
+                </select>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+                <label for="inputState">State</label>
+                <select class="form-select" aria-label="Default Enter Your State" name="state" ngModel="state" #state required>
+                  <option disabled selected value> -- select your state -- </option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                  <option value="Daman and Diu">Daman and Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Puducherry">Puducherry</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+
+
+
+                </select>
+                <small class="txt-danger" [ngClass]="{'d-none':state.value||state.untouched||state.valid}">*field is required </small>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress2">City</label>
+                <input type="text" class="form-control is-valid" id="city" placeholder="Enter Your city" name="city" required ngModel #city="ngModel" [ngClass]="{'is-invalid':city.invalid && city.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':city.untouched||city.valid}">*Field is Required</small>
+
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress2">Contact No</label>
+                <input type="text" class="form-control is-valid" id="inputAddress2" placeholder="Enter Your Contact No or Email Address" name="contact" required ngModel #contact="ngModel" [ngClass]="{'is-invalid':contact.invalid && contact.touched}">
+                <small class="txt-danger" [ngClass]="{'d-none':contact.untouched||contact.valid}">*Field is Required</small>
+
+            </div>
+
+            <button class="button btn" (click)="submit(sellerform)" [disabled]="sellerform.invalid || !acceptFile || !city.value || !prodcat.value || !prodtyp.value || !prod.value">Submit</button>
+        </div>
+
+
+    </form>
+
+    <div class="prop">
+        <h3 class="progress-bar progress-bar-animated prgbar" [ngStyle]="{'width':uploadProgress+'%'}">{{uploadProgress}}</h3>
+        <h2>heu</h2>
+    </div>
+    
+
+
+
+
+</div>

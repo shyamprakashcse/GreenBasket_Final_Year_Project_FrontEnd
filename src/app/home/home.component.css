@@ -1,0 +1,29 @@
+.nav-item a {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: 100;
+}
+
+.nav-item a:hover {
+    color: navy;
+    background-color: white;
+}
+
+.active {
+    /* background-color: #04ec7a;
+   background-color: #7027e0;
+  background-color: #ffe500;
+*/
+    /* background-color: #66edb2; */
+    border: 2px solid rgb(228, 0, 99);
+}
+
+.nav-item {
+    margin: 10px;
+}
+
+i {
+    margin-left: 4px;
+    color: white;
+}

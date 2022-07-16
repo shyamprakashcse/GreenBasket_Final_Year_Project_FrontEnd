@@ -1,0 +1,44 @@
+<div class="outer">   
+   
+
+    <div class="top header"> 
+    <button class="button" (click)="userIndustry()" >My Company</button> 
+    <button class="button" (click)="vendor()">Vendors</button>
+
+     <P>VENDORS LIST</P>
+</div> 
+
+ 
+      <p *ngIf="display">No company found register the company </p>
+
+    <div class="vendors-outer" >  
+       
+        <div class="vendor-card blog-shadow-dreamy" *ngFor="let vendor of Industry; let i=index;" (click)="vendorDetails(vendor)">  
+
+           
+            <div class="card-head card-header">
+                <img src={{vendor.downloadingPath}} alt="logo" class="imgcls">
+                <h5 class="name">{{vendor.companyName}}</h5> 
+            </div>
+           <div class="card-body">
+               <h5>{{vendor.registerNumber}}</h5> 
+               <h5>{{vendor.organizationType}}</h5>
+               <h5>{{vendor.industryType}}</h5>
+              
+           </div> 
+
+           <div class="card-footer">
+            <h5>{{vendor.companyURL}}</h5>
+            <address>{{vendor.address}}</address> 
+            <h5>{{vendor.location}}</h5> 
+            <h3>{{vendor.years}}</h3>
+           </div> 
+
+           <div class="card-end" *ngIf="buttonDisplay">
+               <button class="card-btn" (click)="update(i,vendor)">Update</button> 
+               <button class="card-btn" (click)="delete(i,vendor)">Delete</button>
+           </div>
+       
+        </div>
+    </div>
+</div>

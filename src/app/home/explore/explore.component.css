@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+.outer {
+    background-color: #111224;
+    height: 300vh;
+    font-family: monospace;
+    /* background-image: url("/assets/images/swirl_explore.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;*/
+}
+
+.first {
+    position: relative;
+    top: 10%;
+    /*border: 2px solid white;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+p {
+    color: #7729ed;
+    color: #86f594;
+    color: #fdc274;
+    color: white;
+    color: cyan;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+
+.first .left {
+    word-wrap: break-word;
+    width: 30%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(7, 99, 247, 0.9), 0 2px 4px rgba(7, 99, 247, 0.9), 0 4px 8px rgba(7, 99, 247, 0.9), 0 8px 16px rgba(1, 200, 220, 0.9), 0 16px 32px rgba(7, 99, 247, 0.9), 0 32px 64px rgba(0, 0, 0, 0.07);
+    /* border: 2px solid yellow;*/
+    cursor: pointer;
+}
+
+.first .left h2,
+h6,
+p {
+    margin: 5%;
+}
+
+.first .right {
+    width: 30%;
+    height: inherit;
+    box-shadow: 0 1px 2px rgba(7, 99, 247, 0.9), 0 2px 4px rgba(7, 99, 247, 0.9), 0 4px 8px rgba(7, 99, 247, 0.9), 0 8px 16px rgba(1, 200, 220, 0.9), 0 16px 32px rgba(7, 99, 247, 0.9), 0 32px 64px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    background-image: url("/assets/images/buy_vector_explore1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border: 2px solid yellow;*/
+}
+
+.center {
+    position: relative;
+    top: 15%;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 400px;
+    margin: 10%;
+    background-image: linear-gradient(to right, #101b37, #e41376, #01c8ee);
+    background-image: linear-gradient(to top left, #040b29, #041746, #f34dc3);
+    background-image: none;
+}
+
+.center h4 {
+    width: 70%;
+    margin: 4%;
+}
+
+.carosel {
+    position: relative;
+    top: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.carosel .carder {
+    margin: 2%;
+    width: 30%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.carosel .carder img {
+    width: 80%;
+    margin: 2%;
+    height: 60%;
+}
+
+.carder h2 {
+    color: #101b37;
+    color: white;
+}
+
+.carder:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(7, 99, 247, 0.9), 0 2px 4px rgba(7, 99, 247, 0.9), 0 4px 8px rgba(7, 99, 247, 0.9), 0 8px 16px rgba(1, 200, 220, 0.9), 0 16px 32px rgba(7, 99, 247, 0.9), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.copyright {
+    position: relative;
+    top: 25%;
+    text-align: center;
+}
+
+@media screen and (max-width:800px) {
+    .outer {
+        height: 430vh;
+        width: 200vw;
+    }
+    .first {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .first .left,
+    .first .right {
+        margin: 10%;
+        /*width: 70%;*/
+        width: 40%;
+        /* looks nice we will code later*/
+        height: 50%;
+    }
+    .first .right img {
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+    }
+    .center {
+        width: 40%;
+        height: max-content;
+    }
+}

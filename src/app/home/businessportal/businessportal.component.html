@@ -1,0 +1,19 @@
+<div class="outer">
+    <div class="products">
+        <div class="product-card " *ngFor="let vendor of companyProducts; let i=index">
+            <div class="card-head">
+                <img src={{vendor.downloadingPath}} alt="logo" class="imgcls">
+                <h5 class="name">{{vendor.MaterialName}}</h5> 
+            </div> 
+
+            <div class="card-body">
+                <h5>Material Cost {{vendor.MaterialCost}}</h5> 
+                <h5>{{vendor.organizationType}}</h5>
+                <h5>{{vendor.industryType}}</h5>
+               
+            </div>
+
+
+        </div>
+    </div>
+</div>

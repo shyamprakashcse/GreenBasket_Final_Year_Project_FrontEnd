@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+
+.playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.box-shadow {
+    box-shadow: 0 1px 2px rgba(7, 99, 247, 0.9), 0 2px 4px rgba(7, 99, 247, 0.9), 0 4px 8px rgba(7, 99, 247, 0.9), 0 8px 16px rgba(1, 200, 220, 0.9), 0 16px 32px rgba(7, 99, 247, 0.9), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.bg-lrgt-1 {
+    background-image: linear-gradient(to right, #101b37, #e41376, #01c8ee);
+}
+
+.bg-lrgt-2 {
+    background-image: linear-gradient(to top left, #040b29, #041746, #f34dc3);
+}
+
+.bg-lrgt-3 {
+    background-image: linear-gradient(to right, #ffd400, #ffea61, #ffffb7);
+}
+
+.box-shadow-pink {
+    box-shadow: 0 1px 2px rgba(228, 19, 118, 0.9), 0 2px 4px rgba(255, 21, 185, 0.9), 0 4px 8px rgba(247, 7, 195, 0.9), 0 8px 16px rgba(1, 200, 220, 0.9), 0 16px 32px rgba(243, 77, 195, 0.9), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.button {
+    width: 170px;
+    height: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    text-transform: capitalize;
+    background-color: yellow;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 60px 40px -7px;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    top: -15px;
+}
+
+.button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+} 
+
+
+.bttn {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .bttn:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  .shadow-dreamy {
+    box-shadow: 7.8px 15.7px 15.7px rgba(18, 9, 19, 0.979);
+} 
+
+
+.vendor-card{
+    height:max-content; 
+    width:400px;  
+    cursor: pointer;
+    border-radius: 1em;  
+    border:1px solid white;
+    background-color: white; 
+    margin:2%; 
+    padding:2%; 
+    background: #ff9966;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff5e62, #ff9966); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+} 
+
+.imgcls{
+    width:100px; 
+    height:100px; 
+    border-radius:50%; 
+    border:2px solid white; 
+    
+}
+
+.card-head{
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.vendor-card:hover{
+   
+    transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+}
